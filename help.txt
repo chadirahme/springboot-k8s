@@ -1,0 +1,77 @@
+https://hub.docker.com/
+chadirahme
+Docker@2020
+
+from cmd line
+docker login docker.io
+
+then we have to tag image to same repo name we create in docker hub
+
+docker push chadirahme/playjava
+
+then rmi from local and then run this to pull from dockhub
+
+docker run -p 8080:8080  chadirahme/playjava
+
+to run on port 80
+
+docker run -p 80:8080  chadirahme/playjava
+
+i can access from Azure public ip http://52.139.39.59/
+
+
+rm -rf Kubernetes
+git clone https://github.com/mamtajha-ts/Kubernetes.git
+
+https://github.com/mamtajha-ts/Kubernetes
+
+
+
+
+kubectl expose pod demo-pod-chadi --port 80 --target-port 8080 --type NodePort
+
+i create deployment then
+
+kubectl expose Deployment spring-deployment --port 80 --target-port 8080 --type NodePort
+
+API Management (Apigee) or Service Mesh (Istio)
+
+create new image
+1. docker build -t docker-demo .
+2.docker container ls -a
+3.docker tag docker-demo chadirahme/playjava:v1
+4.to puch to dockerhub>>> docker push chadirahme/playjava:v1
+5.to test and run locally on port 8081 >>  docker run -p 8081:8080  chadirahme/playjava:v1
+6. kubectl describe pods
+
+ while true; do wget -q -O- http://10.47.0.3:8080; done
+ you can test from curl http://10.47.0.3:8080
+
+change image
+kubectl set image deployment/spring-deployment spring-app-chadi=chadirahme/playjava:v1
+then check rollout
+ kubectl rollout history deployment/nginx-deployment
+to roll for prev version
+kubectl rollout undo deployment/spring-deployment --to-revision=1
+
+https://dzone.com/articles/intro-to-redis-with-spring-boot
+source code
+https://github.com/michaelcgood/spring-data-redis-example/blob/master/src/main/java/com/michaelcgood/controller/WebController.java
+
+
+use cahche in spring
+https://www.journaldev.com/18141/spring-boot-redis-cache
+
+jenkins password
+cd /Users/chadirahme/.jenkins/secrets
+
+https://github.com/saurabh0010/houselannister
+
+interview question
+http://net-informations.com/java/cjava/generic.htm
+
+'spring cloud complete examples'
+https://howtodoinjava.com/spring-cloud/
+
+
+
