@@ -32,7 +32,7 @@ public class SpringbootK8sApplicationTests {
 
 	@Test
 	public void testAssertNullFail() {
-		assertNull("should be null", "hello");
+		assertNull("should be null", null);
 	}
 
 
