@@ -29,6 +29,13 @@ public class SpringbootK8sApplicationTests {
 		Assertions.assertThat("one").isEqualTo("one");
 	}
 
+
+	@Test
+	public void testAssertNullFail() {
+		assertNull("should be null", "hello");
+	}
+
+
 	//@Test
 //	public static void main(String[] args) {
 //		IntStream.range(1, 3).reduce((x, y) -> x + y)
