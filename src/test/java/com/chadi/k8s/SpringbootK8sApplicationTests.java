@@ -18,6 +18,7 @@ public class SpringbootK8sApplicationTests {
 	void contextLoads() {
 	}
 
+
 	@Test
 	public void testAssertNull() {
 		assertNull("should be null", null);
