@@ -6,13 +6,19 @@ import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import java.util.Arrays;
 import java.util.stream.IntStream;
 
 import static junit.framework.TestCase.assertNull;
+import static org.hamcrest.CoreMatchers.containsString;
+import static org.junit.Assert.assertThat;
+import static org.hamcrest.CoreMatchers.everyItem;
 
 //@SpringBootTest
 //@RunWith(SpringRunner.class)
 public class SpringbootK8sApplicationTests {
+
+	//https://dzone.com/articles/unit-and-integration-tests-in-spring-boot-2
 
 	//@Test
 	void contextLoads() {
@@ -33,6 +39,11 @@ public class SpringbootK8sApplicationTests {
 	@Test
 	public void testAssertNullFail() {
 		assertNull("should be null", null);
+	}
+
+	@Test
+	public void testAssertThatEveryItemContainsString() {
+		assertThat(Arrays.asList(new String[] { "fun", "ban", "net" }), everyItem(containsString("n")));
 	}
 
 

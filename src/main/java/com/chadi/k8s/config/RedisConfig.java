@@ -12,11 +12,18 @@ import org.springframework.data.redis.listener.ChannelTopic;
 import org.springframework.data.redis.listener.RedisMessageListenerContainer;
 import org.springframework.data.redis.listener.adapter.MessageListenerAdapter;
 import org.springframework.data.redis.serializer.GenericToStringSerializer;
+import org.springframework.web.client.RestTemplate;
 
 
 @Configuration
 @ComponentScan("com.chadi.k8s")
 public class RedisConfig {
+
+
+    @Bean
+    public RestTemplate restTemplate() {
+        return new RestTemplate();
+    }
 
     @Bean
     JedisConnectionFactory jedisConnectionFactory() {
